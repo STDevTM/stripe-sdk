@@ -27,7 +27,7 @@ class CardForm extends StatefulWidget {
       this.postalCodeDecoration,
       this.postalCodeTextStyle,
       this.postalCodeErrorText,
-        this.showCardView,
+        this.showCardView = true,
       this.displayAnimatedCard = !kIsWeb})
       : card = card ?? StripeCard(),
         formKey = formKey ?? GlobalKey(),
@@ -69,7 +69,7 @@ class _CardFormState extends State<CardForm> {
     return SingleChildScrollView(
       child:
           Column(mainAxisAlignment: MainAxisAlignment.start, crossAxisAlignment: CrossAxisAlignment.start, children: [
-            if (showCardView)
+            if (widget.showCardView)
             _getCreditCardView(cardExpiry),
         Form(
           key: widget.formKey,
