@@ -24,10 +24,10 @@ class CardForm extends StatefulWidget {
       this.cardExpiryErrorText,
       this.cardCvcErrorText,
       this.cardDecoration,
+        this.showCardView = false,
       this.postalCodeDecoration,
       this.postalCodeTextStyle,
       this.postalCodeErrorText,
-        this.showCardView = true,
       this.displayAnimatedCard = !kIsWeb})
       : card = card ?? StripeCard(),
         formKey = formKey ?? GlobalKey(),
