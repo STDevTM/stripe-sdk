@@ -11,6 +11,7 @@ class CardNumberFormField extends StatefulWidget {
       this.onChanged,
       this.decoration = defaultDecoration,
       this.textStyle = defaultTextStyle,
+        this.autofocus = false,
       this.textEditingController})
       : super(key: key);
 
@@ -21,6 +22,7 @@ class CardNumberFormField extends StatefulWidget {
   final InputDecoration decoration;
   final TextStyle textStyle;
   final TextEditingController textEditingController;
+  final bool autofocus;
 
   static const defaultLabelText = 'Card number';
   static const defaultHintText = 'XXXX XXXX XXXX XXXX';
@@ -46,7 +48,7 @@ class _CardNumberFormFieldState extends State<CardNumberFormField> {
       initialValue: widget.initialValue,
       controller: widget.textEditingController,
       inputFormatters: [maskFormatter],
-      autofocus: true,
+      autofocus: widget.autofocus,
       autofillHints: [AutofillHints.creditCardNumber],
       onSaved: widget.onSaved,
       validator: widget.validator,
